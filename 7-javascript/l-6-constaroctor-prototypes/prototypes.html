@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <h1>each function creation also create prototype for that function and prototypes are mostly useful when created function is constructor, so that objects created by constructor can share their behabiour of data.</h1>
+    <h1>prototype helps to share the data and property, and lookup done by prototype chaining here v1 look in its own then lookup or Vehicle prototype then serch in Object prototype.  </h1>
+    <script>
+        // try to acess the prototype from constructor.
+        function Vehicle(numWheels,price){
+        this.wheels = numWheels;
+        this.price = price;
+    }
+    Vehicle.prototype.getprice = function(){
+        return this.price;
+    }
+    var v1 = new Vehicle(1,50000);
+    var v2 = new Vehicle(22,534300);
+    </script>
+</body>
+</html>

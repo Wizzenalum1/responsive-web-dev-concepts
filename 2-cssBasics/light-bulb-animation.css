@@ -1,0 +1,82 @@
+body{
+    background-color: rgba(54, 45, 45, 0.822);
+    position: relative;
+    padding-top: 54px;
+}
+body,html,p,ul,li{
+    margin:0px;
+    pardding:0px;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#item2,#item3,#item4{
+    margin:auto;
+    width:70%;
+    height:300px;
+    background-image: linear-gradient(rgba(255, 0, 0, 0.419),rgba(255, 255, 255, 0.316));
+}
+#item1{
+    width:0;
+    height: 0;
+    background-color: blueviolet;
+    visibility: hidden;
+    transition:all 2s ease-in-out .5s;
+    position: absolute;
+    left:0px;
+    overflow: hidden;
+    top:0px;
+}
+#item1:target{
+    width:400px;
+    height: 150px;
+    visibility: visible;
+    background-color: rgba(57, 57, 162, 0.597);
+    position: absolute;
+    left:100px;
+    top:100px;
+    overflow: hidden;
+}
+/* sudo elements */
+p::first-letter{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+#item4>p::first-line{
+    font-size: 1.5rem;
+}
+ul{
+    line-height: 30px;
+}
+ul>li::before{
+    vertical-align: middle;
+    content: '';
+    color:blueviolet;
+    display: inline-block;
+    margin-right:20px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-image:url(asset/background-zaksheuskaya.jpg)
+}
+
+#time{
+    height: 400px;
+    width: 100px;
+    border:2px solid red;
+    /* border-width: 0px 2px 0px 0px; */
+    margin:auto;
+    position:relative;
+    
+}
+#air{
+    width:60px;
+    height:40px;
+    position: sticky;
+    background-color: black;
+    /* display: block; */
+    top:60px;
+
+}

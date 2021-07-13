@@ -1,0 +1,290 @@
+body,html{
+    margin: 0px;
+    padding: 0px;
+    background-color: darkkhaki;
+}
+body>div{
+    padding:5vh 0px;
+    width:90%;
+    box-sizing: border-box;
+    min-height: 80vh;
+    background-color: rgb(255, 255, 255);
+    margin: 5px auto;
+}
+div>div{
+    width:200px;
+    height: 200px;
+    margin:20px 0px;
+}
+#div1 .item1{
+    transition:all 1s;
+}
+#div1 .item1{
+    background-image:linear-gradient(90deg,red 5%, rgb(16, 255, 16) 100%);
+}
+#div1 .item1:hover{
+    /* rotate(alongx,alongY,alongZ,deg) */
+    transform:rotate3d(2, 4, 0, 45deg);
+}
+#div1 .item2{
+    transition:all 1s;
+    position: relative;
+    left:0px;
+}
+#div1 .item2{
+    background-image:linear-gradient(90deg,red 5%, rgb(16, 255, 16) 100%);
+}
+#div1 .item2:hover{
+    /* rotate(alongx,alongY,alongZ,deg) */
+    transform:rotate(360deg) scale(.5);
+    left:150px;
+
+    border-radius: 50%;
+}
+#div2 .item1{
+    height: 100px;
+    width: 100px;
+    transition:height 1s 1s, width 2s,border-radius 1.5s;
+}
+#div2 .item1{
+    background-image:linear-gradient(90deg,red, rgb(16, 255, 16),blue);
+}
+#div2 .item1:hover{
+    height: 200px;
+    width:200px;
+    border-radius: 50%;
+}
+#div2 .item2{
+    height: 100px;
+    width: 100px;
+    margin:10px auto;
+    background-image:   linear-gradient(30deg,#f00, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0)),
+    linear-gradient(150deg,#0f0, rgba(0, 255,0,0) 65%, rgba(0, 255,0,0)),
+    linear-gradient(270deg,#00f, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0));
+    animation-name:bounce1, bounce2;
+    animation-duration: .3s, 1s;
+    /* animation-delay: 3s; */
+    animation-iteration-count: 4,1;
+    animation-delay: 0s,1.2s;
+    animation-timing-function: cubic-bezier(.32,.1,.8,.5);
+    animation-direction: alternate,alternate;
+}
+@keyframes bounce1 {
+  from{
+      transform: translateY(0px);
+  }
+  to{
+      transform: translateY(150px);
+  }
+}
+
+@keyframes bounce2 {
+    from{
+        transform: translateY(0px);
+    }
+    15%{
+        transform: translateY(70px);
+        
+    }
+    30%{
+        transform: translateY(150px);
+        
+    }
+    48%{
+        transform: translateY(70px);
+        
+    }
+    63%{
+        transform: translateY(150px);
+        
+    }
+    80%{
+        transform: translateY(70px);
+        
+    }
+    to{
+        transform: translateY(150px);
+    }
+  }
+
+  #div2 .item3{
+    height: 100px;
+    width: 100px;
+    background-image:   linear-gradient(30deg,#f00, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0)),
+    linear-gradient(150deg,#0f0, rgba(0, 255,0,0) 65%, rgba(0, 255,0,0)),
+    linear-gradient(270deg,#00f, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0));
+    animation:rotate .7s infinite ease-in-out alternate; 
+}
+
+#div2 .item4{
+    height: 200px;
+    width: 200px;
+    margin: 50px auto;
+    background-image:   linear-gradient(30deg,#f00, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0)),
+    linear-gradient(150deg,#0f0, rgba(0, 255,0,0) 65%, rgba(0, 255,0,0)),
+    linear-gradient(270deg,#00f, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0));
+    animation-name: rotate, reduce, square-circle;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: absolute;
+    left:80%;
+    top:90vh;
+    
+}
+@keyframes rotate {
+  from{
+      transform: rotate(0deg);
+  }
+  to{
+      transform: rotate(360deg);
+  }
+}
+@keyframes reduce {
+    from{
+        height: 200px;
+        width:200px;
+    }
+    to{
+        height: 100px;
+        width:100px;
+    }
+  }
+  @keyframes square-circle {
+    from{
+        border-radius: 0%;
+    }
+    to{
+        border-radius: 50%;
+        
+    }
+  }
+
+
+#div3 .item1{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    transition:height 1s 1s, width 2s,border-radius 1.5s;
+    background-image:   linear-gradient(30deg,#f00, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0)),
+    linear-gradient(150deg,#0f0, rgba(0, 255,0,0) 65%, rgba(0, 255,0,0)),
+    linear-gradient(270deg,#00f, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0));
+    animation:rolling 10s 1 linear;
+}
+@keyframes rolling {
+    from{
+        transform:none;
+    }
+    50% {
+        transform:translate(818px) rotate(360deg);
+    }
+    to{
+        transform:translate(0px) rotate(0deg);
+        
+    }
+}
+
+#div3 .item2{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    transition:height 1s 1s, width 2s,border-radius 1.5s;
+    background-image:   linear-gradient(30deg,#f00, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0)),
+    linear-gradient(150deg,#0f0, rgba(0, 255,0,0) 65%, rgba(0, 255,0,0)),
+    linear-gradient(270deg,#00f, rgba(0, 255,0,0) 60%, rgba(0, 255,0,0));
+    animation-name:bounce;
+    animation-duration: 2s;
+    /* animation-delay: 3s; */
+    animation-iteration-count: 2;
+    animation-timing-function: cubic-bezier(.32,.1,.7,.5);
+    ;
+}
+@keyframes bounce {
+    from{
+        transform:none;
+    }
+    45%{
+        transform:translateX(390px);
+
+    }
+    50% {
+        transform:translateX(400px) scaleX(.9) ;
+    }
+    55%{
+        transform: translateX(390px) scaleX(1);
+    }
+    to{
+        transform:translate(0px);
+        
+    }
+}
+
+/* creating 3d cube */
+#cube{
+    position:relative;
+    /* width:100px;
+    /* height: 100px; */
+    margin:100px auto; 
+    transform-style: preserve-3d;
+    perspective: 1200px;
+    animation-name: cude-rotate,cube-translate;
+    animation-duration: 10s,5s;
+    animation-iteration-count: infinte;
+    animation-direction: alternate;
+    /* background-color: black; */
+}
+#cube>div{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 5px;
+    
+}
+
+.face1{
+    background-color: rgb(200, 50,50);
+    transform: none;
+}
+.face2{
+    background-color: rgb(50, 200,50);
+    transform: rotateX(90deg) translateY(50px) translateZ(50px);  
+}
+.face3{
+    background-color: rgb(50, 50,200);
+    transform: rotateX(-90deg) translateY(-50px) translateZ(50px);  
+}
+.face4{
+    background-color: rgb(200, 200,50);
+    transform: rotateX(180deg) translateZ(-100px);
+}
+.face5{
+    background-color: rgb(50, 200,200);
+    transform: rotateY(-90deg) translateX(50px) translateZ(50px);
+}
+.face6{
+    background-color: rgb(200, 50,200);
+    transform: rotateY(90deg) translateX(-50px) translateZ(50px);
+}
+
+
+
+
+@keyframes cude-rotate {
+    from{
+        transform: rotate3d(45deg,45deg,0deg);
+    }
+    33%{
+        transform: rotateX(330deg);
+    }
+    66%{
+        transform: rotateX(30deg);
+        transform: rotateY(30deg);
+    }
+    to{
+        transform: rotateX(330deg);
+        transform: rotateY(330deg);
+        transform: rotateZ(360deg);
+
+    }
+}

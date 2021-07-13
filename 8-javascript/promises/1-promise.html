@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <h1>call back</h1>
+    <p>resolve is successfull call back, reject is falilure callback.</p>
+    <h2>what is general way to write promises</h2>
+    <h2>create your own promise constructor.</h2>
+    <h2>use cases of the promises</h2>
+    <ol><li>help us structure the callback hell chaining(when chaining alot asyncronous request)</li>
+    <li>in asyncronomous languages this help us to confirm the success or failure. </li>
+    <li></li>
+    <li></li>
+    <li></li></ol>
+    <script>
+    // structure of promises
+        // var x = new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         resolve();
+        //     },1000);
+        // });
+
+        // x.then(()=>{console.log("suceecsfull",)});
+
+    // // promise with using reject case also. 
+        // var userloogedIn = Math.random();
+        // console.log(userloogedIn);
+        // var promise = new Promise((resolve,reject)=>{
+        //     // wait for 1sec
+        //     setTimeout(() => {
+        //         // promise is resolved
+        //         if(userloogedIn>.5){
+        //             resolve();     
+        //         }else{
+        //             reject();
+        //         }
+        //     }, 2000);
+        // });
+        // promise.then(()=>{
+        //     console.log("successfull",userloogedIn);
+        // }).catch(()=>{console.log("user not logged In")});
+
+
+    // // generally promises put in to the function then tehy called.
+
+        // function promiseFromFunction(){
+        //     var promise = new Promise(function(resolve,reject){
+        //         //code shold be here..
+
+
+        //         if(resolved){
+        //             resolve();
+        //         }
+        //         else reject();
+        //     });
+        //     return promise;
+        // }
+        // let resolved = Math.random()>.5?true:false;
+        // promiseFromFunction().then(function(resolved){
+        //     console.log("successfull");
+        // }).catch(function(){
+        //     console.log("failed")
+        // })
+        
+
+    // chaining in normal way and chaining with useing promises.
+            setTimeout(function(){
+                setTimeout(function(){
+                    setTimeout(function(){
+                        console.log()
+                    })
+                })
+            },1000)
+
+    </script>
+</body>
+</html>

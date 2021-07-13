@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>togle view</title>
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <main>
+        <div id="tb">
+            <div></div>
+        </div>
+        <p>TogleUsing JQuery</p>
+    </main>
+    <script>
+        $('html').css({
+            boxShadow:"0px 0px 10px 10px #bbb inset" ,
+            width:"100vw",
+            height:"100vh",
+            margin:"0px",
+            boxSizing:"border-box",
+            backgroundColor:"white",
+
+        });
+        $('#tb').css({
+            margin:"50px auto",
+            border:"5px solid black",
+            borderRadius:"20px",
+            width:"80px",
+            height:"20px"
+        })
+        $('#tb>div').css({
+            width:"20px",
+            height:"20px",
+            borderRadius:"20px",
+            backgroundColor:"blue",
+            position:"relative",
+        })
+        $('p').css({
+            fontSize:'3rem',
+            margin:"50px auto",
+            width:"100%",
+            textAlign:"center",
+        })
+        let darkmode = false;
+        $('#tb').click(function(){
+            if(!darkmode){
+                $('html').css({
+                    boxShadow:"0px 0px 20px 10px #fff inset",
+                    color:"white",
+                    backgroundColor:"black",
+                });
+                $('#tb').css({
+                    borderColor:"white",
+                    backgroundColor:"black"
+                });
+                $('#tb>div').css('left','60px');
+                darkmode = true;
+            }
+            else{
+
+                $('html').css({
+                    boxShadow:"0px 0px 10px 10px #111 inset",
+                    color:"black",
+                    backgroundColor:"white",
+                });
+                $('#tb').css({
+                    borderColor:"black",
+                    backgroundColor:"white"
+                });
+                $('#tb>div').css('left','0px');
+                darkmode = false;
+            } 
+        });
+    </script>
+</body>
+</html>

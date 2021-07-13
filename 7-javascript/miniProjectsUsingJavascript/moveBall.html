@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>move the ball</title>
+    <meta http-equiv="refresh" content = "100">
+    <style>
+        body{
+            box-sizing: border-box;
+            background-color: rgb(80, 80, 82);
+            margin: 0px;
+            width:100vw;
+            height:100vh;
+            position: relative;
+            box-shadow: 0px 0px 20px rgb(226, 222, 222) inset;
+            /* border:5px solid red; */
+        }
+        #ball{
+            border-radius: 50%;
+            background-color: blueviolet;
+            box-shadow: 0px 0px 5px rgb(59, 26, 90);
+            position:absolute;
+            top:30px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id = ball></div>
+    <script>
+        let ball = document.getElementById("ball");
+        let size = 50;
+        let step = 5;
+        ball.style.width = ball.style.height = size+"px";
+        // setting the boundry for the ball where left and top boundaries are 0,0
+        let box = document.body.getBoundingClientRect();
+        let tBound = 0, rBound = box.width-size, bBound = box.height-size, lBound = 0;
+        ball.style.top = parseInt(bBound*Math.random())+"px";
+        ball.style.left= parseInt(rBound*Math.random())+"px";
+
+        console.log(box.width,box.height,ball.style.top,ball.style.left);
+        
+        document.body.addEventListener('keydown',function(event){
+            console.log(event.keyCode);
+            var top = parseInt(ball.style.top.substring(0,ball.style.top.indexOf("p")));
+            var left = parseInt(ball.style.left.substring(0,ball.style.left.indexOf("p")));
+            if(event.keyCode==38 || event.keyCode == 87){
+                if(top-step>tBound) top = top-step;
+                else top = 0;
+            }else if(event.keyCode==40 || event.keyCode == 83){
+                if(top+step<bBound) top = top+step;
+                else top = bBound;
+            }else if(event.keyCode==37 || event.keyCode == 65){
+                if(left-step>lBound) left = left-step;
+                else left = 0;
+            }else if(event.keyCode==39 || event.keyCode == 68){
+                if(left+step<rBound) left = left+step;
+                else left = rBound;
+            }
+            ball.style.top = top+"px"
+            ball.style.left = left+"px"
+            console.log(top,left);
+        })
+
+    </script>
+</body>
+</html>

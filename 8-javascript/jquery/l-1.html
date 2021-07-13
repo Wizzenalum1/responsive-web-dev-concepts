@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introduction</title>
+    <meta http-equiv="refresh" content = "10">
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <p id="para1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quam. </p>
+    <p id="para2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quam. </p>
+    <p><a href = "http://www.google.com">Lorem ipsum dolor sit amet.</a></p>
+    <div></div>
+    <script>
+        $('html').css({
+            // boxShadow:"0px 0px 10px 10px #bbb inset" ,
+            width:"100vw",
+            height:"100vh",
+            margin:"0px",
+            boxSizing:"border-box",
+            backgroundColor:"red"
+        });
+        let p1 = $('#para1');
+        p1.html('welcome');
+        // p1.hide();
+        $('p').eq(1).html('so ja ab');
+
+        // cahnging css propery
+        $('p').css('color','red');// for single property
+        p1.css({
+            fontSize:"30px",
+            color:"brown"
+        });
+        $('div').css({
+            width:"100px",
+            height:"100px",
+            backgroundColor:"cyan"
+        })
+// handling the events
+        // way one
+        $('div').click(function(){
+            alert("div clicked");
+        })
+        $('div').on('click',function(){
+            var ele = $(this);
+            ele.width(ele.width()+100+"px");
+        })
+        $('a').on('click',function(event){
+            event.preventDefault();
+        })
+    </script>
+</body>
+</html>

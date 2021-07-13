@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body{
+            margin: 0px;
+            display: grid;
+            gap:20px;
+            /* transform: translateY(100px); */
+            grid-template-columns:repeat(auto-fit,minmax(200px,auto));
+        }
+
+        .image:nth-child(odd){
+            height:200px;
+            background-color: cornflowerblue;
+        }
+        .image:nth-child(even){
+            height:300px;
+            background-color: rgb(100, 237, 111);
+        }
+        .percentage_scrolled{
+            height: 100px;
+            width: 100%;
+            background-color: rgb(141, 141, 141);
+            position:fixed;
+            display: grid;
+            place-items: center;
+            font-size: 3rem;
+            /* transform:translateY(-100px); */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="percentage_scrolled">
+        <div id = "text">0%</div>
+    </div>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    <dev class="image"></dev>
+    
+    <script>
+        let text = document.getElementById("text");
+        let percentege;
+        const pageHeight= parseInt(document.scrollingElement.scrollHeight);
+        const winHeight = parseInt(window.innerHeight);
+        let upper = parseInt(document.scrollingElement.scrollTop)
+        const initial_diff = pageHeight - winHeight-upper;
+        // console.log(pageHeight, winHeight, initial_diff,upper)
+
+
+        
+        document.addEventListener('scroll',function(){
+            upper = parseInt(document.scrollingElement.scrollTop)
+            let difference = pageHeight - winHeight-upper;
+            let height = winHeight-difference*winHeight/initial_diff;
+            percentege = parseInt((upper+height)*100/pageHeight);             
+            // console.log(upper,height,difference,percentege);
+            text.innerHTML = percentege+"%";
+        })
+    </script>
+</body>
+
+</html>

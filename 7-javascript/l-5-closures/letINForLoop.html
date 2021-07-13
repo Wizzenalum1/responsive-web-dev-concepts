@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>var and let in for loop</h1>
+    <p>let make block scope, var dont create block scope for the for loop.</p>
+<script>
+    console.log("problem why this for loop printing same number.")
+    // for(var i = 1;i<=5;i++){
+    //     setTimeout(()=>{console.log(i);},1000);
+    // }
+    // console.log("after the loop",i);
+// solution 1
+    function p (a){
+        setTimeout(()=>{console.log(a)},2000);
+    }
+    for(var i = 1;i<=5;i++){
+        p(i);
+    }
+    console.log("after the loop",i);
+// solution 2
+    for(let i = 1;i<=5;i++){
+        setTimeout(()=>{console.log(i);},1000);
+    }
+    console.log("after the loop",i);
+    
+
+</script>
+</body>
+
+</html>

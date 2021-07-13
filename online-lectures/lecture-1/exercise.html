@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+    <meta http-equiv="refresh" content="50">
+    <style>
+        body{
+            margin:5vh 20vw;
+            min-width:200px;
+            padding:0px;
+            background:center / contain repeat linear-gradient(30deg,rgba(255, 147, 147, 0.542),rgb(161, 161, 255)),linear-gradient(-30deg,rgb(0, 0, 0),rgb(161, 161, 255));
+        }
+        body>*{
+            min-width:200px;
+
+            margin:0px;
+            box-sizing: border-box;
+            display: inline-block;
+            margin-bottom:30px;
+            color:rgba(0, 0, 0, 0.624);
+            transition:all 3s;
+        }
+        #div1{
+            font-size: 3rem;
+            text-align: center;
+            text-transform: capitalize;
+            margin-bottom: 80px;
+            /* background-color: rebeccapurple; */
+            width:100%;
+        }
+        #div1::after{
+            font-size: 1rem;
+            content:"imp";
+            border:1px solid gainsboro;
+            border-radius: .5rem;
+            padding:0rem .5rem;
+            color: brown;
+            /* border-color: aquamarine; */
+        }
+        img{
+            width:60%;
+            margin:auto;
+            display: block;
+            /* opacity: .8; */
+            /* right:5vw; */
+            margin-bottom: 10%;
+            height: auto;
+            overflow: hidden;
+            box-shadow:5px 5px 4px rgba(0, 0, 0, 0.446) ;
+            transform: rotateZ(-5deg);
+
+        }
+        #div2,#span-2{
+            box-sizing: border-box;
+            height:10vw;
+            width:49.5%;
+            padding:10px 20px;
+            font-size: 1.5rem;
+            background-color: cornflowerblue;
+            text-align: center;
+            border-radius: 5vw;
+            min-height: 200px;
+
+        }
+        #div2{
+            transform:rotate(-5deg);
+        }
+        #span-1{
+            /* margin-left:20px; */
+            font-size:2rem;
+            font-family: cursive;
+            /* background-color: cyan; */
+        }
+        #span-1::before{
+            content:'This image is awesome because ';
+        }
+        #span-1::after{
+            content:'.  and your brain going to spin!';
+            color:antiquewhite;
+            font-size:3rem;
+
+
+        }
+        #span-2{
+            transform:rotate(5deg);
+            transition: 3s;
+        }
+        #span-2::after,#div2::after{
+            content:'...please hover me, please yaar...';
+            font-size: 2rem;
+        }
+        #span-2:hover,#div2:hover,img:hover{
+            transform: rotateZ(360deg);
+        }
+        @media (max-width:800px){
+            body{
+                margin:5vh 10vw;
+            }
+            #span-2,#div2{
+                width:65vw;
+            margin:auto;
+            display: block;
+            margin-bottom: 10%;
+            height: 65vw;
+            overflow: hidden;
+            box-shadow:5px 5px 4px rgba(0, 0, 0, 0.446) ;
+            min-height: 200px;
+            }
+            img{
+                width:80%;
+
+                border-radius: 5vw;
+            }
+        }
+        
+    </style>
+</head>
+<body>  
+    <div id="div1">this is div</div>
+    <span id="span-1">this is span</span>
+    <img src="https://source.unsplash.com/random/720x720" alt="">
+    <span id="span-2">this is nother span</span>
+    <div id="div2">this is another div</div>  
+</body>
+</html>

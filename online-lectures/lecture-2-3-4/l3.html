@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media quiries</title>
+    <style>
+        body{
+            color:red;
+        }
+        .title{ font-size:6rem}
+        .subtitle{ font-size: 4rem;}
+        @media all and (max-width : 500px) {
+            body{
+                color:blue;
+            }
+        }
+        @media (orientation:lasdscape) and (max-width:500px){
+            .title{
+                color: green;
+            }
+        }
+        @media (orientation:porrrait) {
+            .subtitle{
+                color: black;
+            }
+        }
+        /* @media() */
+        /* 
+        @media-> print 
+        screen
+        speech
+        all(default) */
+    </style>
+</head>
+<body>
+    <div class="title">Title</div>
+    <div class="subtitle">subtitle</div>
+</body>
+</html>

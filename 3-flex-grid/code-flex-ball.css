@@ -1,0 +1,276 @@
+body,html{
+	margin: 0px;
+	padding:0px;
+	font-family: monospace;
+	background-color: #e2fffd;
+
+}
+h1{
+	text-transform: uppercase;
+	color:hsla(120,10%,100%,1);
+	background-color: darkslategrey;
+	padding: 20px;
+	text-align: center;
+	font-size: 2rem;
+}
+#box{
+	margin:auto;
+	width:330px;
+	height: 240px;
+	background-color: #ffffff;
+	margin-top: 100px auto;
+	border:1px solid black;
+	display: flex;
+	/* flex-direction:row-reverse; */
+	flex-direction: row;
+	/* flex-wrap: wrap-reverse; */
+}
+
+#box div{
+	border-radius: 50%;
+	border:1px solid lightgrey;
+	box-sizing: border-box;
+}
+
+#ball1{
+	height: 30px;
+	width:30px;
+	background-color: #ff9bc9;
+	/* order:6; */
+	flex-grow:0;
+	flex-shrink: 0;
+
+
+}
+#ball2{
+	height: 40px;
+	width:40px;
+	background-color: #df8eff;
+	flex-shrink: 1;
+	flex-grow: 1;
+
+}
+#ball3{
+	height: 50px;
+	width:50px;
+	background-color: #91dcff;
+	flex-shrink: 1;
+	flex-grow: 2;
+
+	/* order:4; */
+}
+#ball4{
+	height: 60px;
+	width:60px;
+	background-color: #93ff99;
+	flex-shrink: 1;
+	flex-grow: 3;
+
+
+	/* order:2; */
+}
+#ball5{
+	height: 70px;
+	width:70px;
+	background-color: #dfff89;
+	flex-shrink: 2;
+
+	/* order:5; */
+}
+#ball6{
+	height: 80px;
+	width:80px;
+	background-color: #ffdf8e;
+	flex-shrink: 2;
+
+	/* order: 3; */
+}
+
+/* flex ball 4  */
+
+#box1{
+	margin:auto;
+	width:330px;
+	height: 240px;
+	background-color: #ffffff;
+	margin-top: 100px auto;
+	border:1px solid black;
+	display: flex;
+	/* flex-direction:row-reverse; */
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	/* flex-wrap: wrap-reverse; */
+}
+#box2{
+	margin:auto;
+	width:330px;
+	height: 240px;
+	background-color: #ffffff;
+	margin-top: 100px auto;
+	border:1px solid black;
+	display: flex;
+	/* flex-direction:row-reverse; */
+	flex-direction: column;
+	justify-content: space-around;
+	/* flex-wrap: wrap-reverse; */
+}
+#box1 div{
+	border-radius: 50%;
+	border:1px solid lightgrey;
+	box-sizing: border-box;
+}
+#box2 div{
+	border-radius: 50%;
+	border:1px solid lightgrey;
+	box-sizing: border-box;
+}
+
+#ball7{
+	height: 30px;
+	width:30px;
+	background-color: #ff9bc9;
+	/* order:6; */
+	/* flex-grow:0; */
+	/* flex-shrink: 0; */
+
+
+}
+#ball8{
+	height: 40px;
+	width:40px;
+	background-color: #df8eff;
+	/* flex-shrink: 1; */
+	/* flex-grow: 1; */
+
+}
+#ball9{
+	height: 50px;
+	width:50px;
+	background-color: #91dcff;
+	/* flex-shrink: 1; */
+	/* flex-grow: 2; */
+
+	/* order:4; */
+}
+#ball10{
+	height: 60px;
+	width:60px;
+	background-color: #93ff99;
+	/* flex-shrink: 1; */
+	/* flex-grow: 3; */
+
+
+	/* order:2; */
+}
+#ball11{
+	height: 70px;
+	width:70px;
+	background-color: #dfff89;
+	/* flex-shrink: 2; */
+
+	/* order:5; */
+}
+#ball12{
+	height: 80px;
+	width:80px;
+	background-color: #ffdf8e;
+	/* flex-shrink: 2; */
+
+	/* order: 3; */
+}
+
+
+
+/* flex ball 5 */
+#box3{
+	margin:auto;
+	width:330px;
+	height: 240px;
+	background-color: #ffffff;
+	margin-top: 100px auto;
+	border:1px solid black;
+	display: flex;
+	/* flex-direction:row-reverse; */
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: flex-end;
+	/* flex-wrap: wrap-reverse; */
+}
+#box4{
+	margin:auto;
+	width:330px;
+	height: 240px;
+	background-color: #ffffff;
+	margin-top: 100px auto;
+	border:1px solid black;
+	display: flex;
+	/* flex-direction:row-reverse; */
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	align-items: center;
+	/* flex-wrap: wrap-reverse; */
+}
+#box3 div{
+	border-radius: 50%;
+	border:1px solid lightgrey;
+	box-sizing: border-box;
+}
+#box4 div{
+	border-radius: 50%;
+	border:1px solid lightgrey;
+	box-sizing: border-box;
+}
+
+#ball13{
+	height: 30px;
+	width:30px;
+	background-color: #ff9bc9;
+	/* order:6; */
+	/* flex-grow:0; */
+	/* flex-shrink: 0; */
+
+
+}
+#ball14{
+	height: 40px;
+	width:40px;
+	background-color: #df8eff;
+	/* flex-shrink: 1; */
+	/* flex-grow: 1; */
+
+}
+#ball15{
+	height: 50px;
+	width:50px;
+	background-color: #91dcff;
+	/* flex-shrink: 1; */
+	/* flex-grow: 2; */
+
+	/* order:4; */
+}
+#ball16{
+	height: 60px;
+	width:60px;
+	background-color: #93ff99;
+	/* flex-shrink: 1; */
+	/* flex-grow: 3; */
+
+
+	/* order:2; */
+}
+#ball17{
+	height: 70px;
+	width:70px;
+	background-color: #dfff89;
+	/* flex-shrink: 2; */
+
+	/* order:5; */
+}
+#ball18{
+	height: 80px;
+	width:80px;
+	background-color: #ffdf8e;
+	/* flex-shrink: 2; */
+
+	/* order: 3; */
+}

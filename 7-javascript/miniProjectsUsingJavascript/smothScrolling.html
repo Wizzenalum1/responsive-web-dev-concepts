@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:50px;
+            background-color: burlywood;
+        }
+        div{
+            width: 80%;
+            height: 60vh;
+            background-color: cadetblue;
+            margin:30px auto;
+        }
+        a{
+            padding:5px 10px;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav id = "top">
+        <a href="#item1">div1</a><a href="#item2">div2</a><a href="#item3">div3</a><a href="#item4">div4</a><a href="#item5">div5</a><a href="#item6">div6</a>
+    </nav>
+    <div id="item1"><a href="#top">top</a> div1</div>
+    <div id="item2"><a href="#top">top</a> div2</div>
+    <div id="item3"><a href="#top">top</a> div3</div>
+    <div id="item4"><a href="#top">top</a> div4</div>
+    <div id="item5"><a href="#top">top</a> div5</div>
+    <div id="item6"><a href="#top">top</a> div6</div>
+    <script>
+        'strict mode'
+        // step 1 fetch all the inside movinig items a[href*="tutsplus"]
+        var scrollTags = document.querySelectorAll("a[href*='#']");
+        // step 2 add click event listner to all fetched elements
+       
+        function smoothScroll(destination,step,interval){
+            // this function will handle the click for smoth scrolling.
+            console.log("smooth scroll",step,interval,destination);
+            function scroll(step){
+                var current = document.scrollingElement.scrollTop;
+                // console.log(destination,step, interval, current);
+                var destinationMax = document.scrollingElement.scrollTopMax;
+                if(destination>current) scrollBy(0,step);
+                if(destination<current) scrollBy(0,-1*step);
+                if (Math.abs(current-destination) <= step/2|| 
+                (!(destination<current-step)&& Math.abs(current-destinationMax) <= step/2)){
+                    clearInterval(id);
+                }
+            }
+            function easein(){
+                var current = document.scrollingElement.scrollTop;
+                var walkLeft = Math.abs(current-destination);
+                // console.log(Math.max(Math.log(walkLeft)**2,5))
+                // scroll(Math.max(Math.log(walkLeft)**2,5));
+                // scroll(Math.max(walkLeft/15,5));
+                if(walkLeft>500) scroll(walkLeft/20);
+                // scroll(Math.max(Math.cbrt(walkLeft),5));
+                scroll(Math.max(Math.sqrt(walkLeft),5));
+            }
+            var stepLocal = 10
+            var id = setInterval(easein,interval); 
+            // var id = setInterval(scroll,interval,stepLocal) 
+        }
+
+        for(var i=0;i<scrollTags.length;i++){
+            scrollTags[i].addEventListener('click',function(e){
+                e.preventDefault();
+                var ele = document.querySelector(e.target.hash);
+                if(ele){
+                    console.log("element is found",ele)
+                    var destination = ele.offsetTop;
+                    smoothScroll(destination,20,10);
+                }else console.log('not fount element');
+            });
+        }
+        
+
+            // disable the default action
+            // call a fucntion that make it ot move slowly to the destination
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body{
+	margin:0px;
+}
+body{
+	color : pink ;
+}
+#color{
+	background-color: hsl(120,50%,50%,.8);
+	/* width:100%; */
+	/* padding: 50px; */
+	margin:150px;
+	border:5px solid red;
+	/* position: sticky; */
+}
+p{
+	color: rgba(45,32,234,1);
+}
+.black{
+	color: hsla(120,50%,0%,1);
+}
+.shadow{
+	text-shadow:2px 2px red;
+}
+.white{
+	width:80%;
+	color:#ffffff;
+	background-color: rgba(0,0,0,.5);
+	position: sticky;
+	top:0px;
+	left:50;
+}
+.head1{
+	font: 2em sans-serif;
+	word-spacing: 11px;
+	text-align: center;
+}
+.head2{
+	font: 1.5em italic;
+}
+#border{
+	margin: 10vh 0px 10vh 10vw;
+	width:80%;
+	height: 80vh;
+	background-color: hsla(120,50%,50%,.5);
+
+}
+#first{
+	background-color: hsla(360,50%,50%,.6);
+	width:50%;
+	height: 40%;
+	border-width:5px;
+	border-style: groove ridge inset outset;
+	border-color:hsla(200,50%,50%,.8);
+	margin:20px;
+	border-radius: 5px 10px 20px 30px;	
+}
+#second{
+	background: url(asset/facebook-logo-white.png),url(asset/twitter_PNG1.png),linear-gradient(#fff, #000);
+	background-repeat:no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: 50%;
+	width:50%;
+	height: 40%;
+	border-width:10px 20px 30px 40px;
+	margin:20px;
+	border-color: #f00 #a11 #922 #644;
+	border-radius: 50px 40px 30px 20px;
+	border-style: dotted dashed double none; 
+}
+#border1{
+	/* margin: 10vh 0px 10vh 10vw; */
+	padding-top:30px;
+	width:80%;
+	height: 80vh;
+	background-color: hsla(180,50%,20%,.5);
+	position: relative;
+	left: 10%;
+	margin-bottom: 500px;
+
+
+}
+#first1{
+	background-color: hsla(360,50%,50%,.6);
+	margin-top:60px;
+	width: 50%;
+	height: 30%;
+	border:3px solid black;
+	padding: 20px;
+	/* visibility: hidden; */
+	display: inline-block;	
+	position: sticky;
+
+}
+/* #first1 span{
+	margin: 20px;
+	border:2px dotted black;
+} */
+#second1{
+	background-color: #ff0;
+	display: inline-block;
+	width:40%;
+	height: 30%;
+	margin-top:10%;
+	margin-left:-.25rem;
+	border:2px solid orangered;
+}
+#first1 span{
+	display: block;
+	position: sticky;
+	
+}
+.size{
+	width: 30%;
+	height: 70%;
+	border:1px solid white;
+}

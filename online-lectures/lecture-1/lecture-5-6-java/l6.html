@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>use of clouse</h1>
+    <ol>
+        <li>currying</li>
+        <li>memoize</li>
+        <li>module disign pattern</li>
+        <li>set timeout</li>
+        <li>iterators</li>
+    </ol>
+    <h2>what is settimeout</h2>
+    <p> a call back fucntion, event loop, event handler, .</p>
+    <p>event queue, call back stack atay for delay time </p>
+    <p> always with delay things print after the without delay because they move to event queue te</p>
+    <h2> we need to print 1 after 1sec 2 after 2sec and 3 after 3sec ..10 after 5 sec.</h2>
+    <h2> how to solve this without any using let.</h2>
+
+    <script>
+        // // example of tiem out
+        // function x(){
+        //     var i = 1;
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },3);
+        //     for(; i<10000;i++){
+        //         console.log("hello world");
+        //         console.log("hello world");
+        //     }
+        // }
+        // x();
+        // // 2. answer 1
+        // function x(){
+        //     for(var i=0;i<=5;i++){
+        //         setTimeout(function(){
+        //             console.log(i);
+        //         },i*1000);
+        //     }
+        //     console.log("hello world");
+        // }
+        // x();
+        //2 answer 2.
+        function y(i){
+            setTimeout(function(){
+                    console.log(i);
+                },i*1000);
+        }
+        for(var i=1;i<=5;i++){
+            y(i);
+        }
+
+
+    </script>
+</body>
+</html>

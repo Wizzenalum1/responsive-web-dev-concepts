@@ -1,0 +1,137 @@
+body{
+	margin-left:5rem; 
+	margin-right:1rem;	
+}
+
+/*------header---------*/
+#main-header{
+	margin:4rem 0rem 6rem 0rem;
+}
+#main-header a{
+	text-decoration: none;
+}
+#site-title a{
+	font-size: 3rem;
+	color: black;
+	font-weight: bold;
+}
+#about-site{
+	margin-top:-1rem;
+	font-size: 1.5rem;
+}
+#header-image-container img{
+	width:100%;
+	margin-top:2rem;
+}
+
+/*content of the site*/
+#content img{
+	width: 100%;
+}
+.orange-text span{
+	color: #dc6520;
+	font-size: 1rem;
+}
+#on{color: black;}
+.graytext{
+	color: #3c5359;
+	font-size: 1rem;
+
+}
+.aside-heading{
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+/*main*/
+
+.heading3{
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+#blog-header h1{font-size: 3rem;
+}
+
+/*views image*/
+#views div{
+	width:4px;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: -3px;
+	background-color: black;	
+}
+#item1{height:6px;}
+#item2{height:12px;}
+#item3{height:20px;}
+#views span{ margin-left: 6px }
+
+/* author  */
+#author img{
+	width: 50%;
+	border-radius: 50%;
+}
+#author,#side-bar{
+	display: inline-block;
+	width: 23%;
+	vertical-align: top;
+}
+#blog-content,main{
+	display: inline-block;
+	width: 75%;
+}
+
+/* side bar  */
+
+#side-bar section{
+	border-top: 4px solid black;
+	padding-top: 25px;
+	padding-bottom: 30px;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+
+#subscription input,label{
+	display: block;
+}
+#side-bar input{
+	margin: 10px 0px;
+	padding-left:.5rem;
+	width: 100%;
+	height: 2.5rem;
+	font-size: 1rem;
+	color: #3c333f ;
+}
+
+#subscription button{
+	margin-top: 20px;
+	background-color: black;
+	color: white;
+	padding-left:.5rem;
+	width: 50%;
+	height: 2.5rem;
+	font-size: 1rem;
+	border-radius: 5px;
+	border: 0px solid black;
+}
+
+/* search-section of aside */
+#search input{
+	width: 65%;
+	display: inline-block;
+}
+#search button{
+	border: 0px dotted black;
+	border-radius:0px 5px 5px 0px;
+	width: 20%;
+	height: 2.5rem;
+	background-color: black;
+	margin-left: -10px;
+	display: inline-block;
+}
+#search button img{ width: 80%;}
+
+button:hover{
+	background-color: #486855;
+}
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="refresh" content="10" > 
+	<title>semantic tags </title>
+	<link rel="stylesheet" href="basic.css">
+</head>
+<body>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">top</a></li>
+      <li><a href="#first-article">header</a></li>
+      <li><a href="#detail">main</a></li>
+    </ul>
+  </nav>
+
+	<!-- page header -->
+	<header id="page-header" class="ff-unique">
+    <h1>Semantic tags</h1>
+    <img class="image" src="src/header-background.jpg" alt="background pic">
+    <p>In programming, Semantics refers to the meaning of a piece of code — for example "what effect does running that line of JavaScript have?", or "what purpose or role does that HTML element have" (rather than "what does it look like?".)</p>
+		
+	</header><!-- "page-header -->
+
+
+	<main>
+    <!-- first article -->
+		<article id = "first-article">
+  		<header>
+  			<h2>header and main </h2>
+  			<img  src="src/album1.png" alt="music beats image">
+  		</header>
+      <section >
+        <h3>header </h3>
+        <p>The HTML &lt;header&gt; element represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.</p>
+        <p>header can be introduction of the page or can be introduce the any article, section or any sectioning tag except header, footer, address. </p>
+      </section>
+      <section>
+        <h3>main</h3>
+        <p>The HTML &lt;main&gt; element represents the dominant content of the &lt;body&gt; of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application.</p>
+        <p>The content of a &lt;main&gt; element should be unique to the document. Content that is repeated across a set of documents or document sections such as sidebars, navigation links, copyright information, site logos, and search forms shouldn't be included unless the search form is the main function of the page.
+        </p>
+        <p>&lt;main&gt; doesn't contribute to the document's outline; that is, unlike elements such as &lt;body&gt;, headings such as &lt;h2&gt;, and such, &lt;main&gt; doesn't affect the DOM's concept of the structure of the page. It's strictly informative.</p>
+      </section>
+    </article>
+		<aside>
+      <h4> aside</h4>
+      <p>The HTML &lt;aside&gt; element represents a portion of a <mark>document whose content is only indirectly related to the document's main content.</mark> Asides are frequently presented as sidebars or call-out boxes</p>
+    </aside>
+		<article>
+      <h3>Figure and detail tags</h3>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li><a href="#">topic 1</a></li>
+          <li><a href="https://www.youtube.com">youtube</a></li>
+          <li><a href="https://wizzenalum1.github.io">github</a></li>
+          <li><a href="#main"></a></li>
+          <li><a href="#">top</a></li>
+        </ul>
+      </details>
+      <figure>
+        <img src="src/random.png"
+             alt="Elephant at sunset">
+        <figcaption>screenshot oof the html code.</figcaption>
+      </figure>
+    </article>
+    <time datetime="2018-07-07T20:00:00">20:00</time>
+		<footer>
+      <section>
+        <span>youtube</span>
+        <span>facebook</span>
+        <span>instagram</span>
+        
+      </section>
+    <section>
+      <button class="reply">Reply</button>
+      <button class="reply-all">Reply to all</button>
+      <button class="fwd">Forward</button>
+      <button class="del">Delete</button>
+    </section>
+    </footer>
+	</main>
+	
+</body>
+</html>

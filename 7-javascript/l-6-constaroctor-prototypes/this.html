@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>talking to this</title>
+</head>
+<body>
+    <h1>this created during the creation of the lexical environment.</h1>
+    <script>
+        'use strict'
+        // global this
+        console.log("from the global  ",this);
+
+        // from function
+        var demo = function(a,b){
+            console.log("this from function direct call  ",this);
+        }
+        demo();
+
+
+        var obj = {
+            a:"hi",
+            b:function(){
+                console.log("this from object calling function",this);
+            }
+        }
+        obj.b();
+        
+        // call function by binding it
+        demo.call(obj,3,4);
+        demo.apply(obj,[3,4]);
+    </script>
+</body>
+</html>

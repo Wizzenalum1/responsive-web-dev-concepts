@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        html{
+            /* height: 100%; */
+            height:100vh;
+            width:100vw;
+            background-color: gray;
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center; */
+        }
+        /* .flexbox-container{
+            background-color: yellow;
+            position: relative;
+            display: flex;
+        }
+        .flexbox-item{
+            box-sizing: border-box;
+            width:100px;
+            margin:10px;
+            border:3px solid gray;  
+        }
+        .flexbox-item-1{
+            min-height: 200px;
+            flex: 1 0 0; 
+            align-self:flex-end;  
+        }
+        .flexbox-item-2{
+            min-height: 100px;  
+            flex:2 0 0; 
+        }
+        .flexbox-item-3{
+            min-height: 300px;   
+        } */
+        .axis{
+            position: absolute;
+        }
+        .main-axis{
+            top:50%;
+            transform: translateY(-50%);
+            height:5px;
+            width:100%;
+            background-color: red;
+
+        }
+        .axis::after{
+            position: absolute;
+            right:10px;
+            bottom:10px;
+            font-size: 2em;
+        }
+        .main-axis::after{
+            white-space:nowrap;
+            content:"main axis";
+        }
+        .cross-axis::after{
+            content:"cross axis";
+            white-space: nowrap;
+            writing-mode: vertical-lr;
+        }
+
+        .cross-axis{
+            left:50%;
+            transform: translateX(-50%);
+            width:5px;
+            height:100%;
+            background-color: blue;
+        }
+        .flexbox-container::before{
+            content: "flex box  xontk";
+            position: absolute;
+            top:-40px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1"></div>
+        <div class="flexbox-item flexbox-item-2"></div>
+        <div class="flexbox-item flexbox-item-3"></div>
+        <div class="axis main-axis"></div>
+        <div class="axis cross-axis"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shape</title>
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <style>
+        .container{
+            display: grid;
+            grid-template-rows: repeat(3,1fr);
+            place-items: center center;
+            justify-content: center;
+            gap:30px;
+            padding:20px;
+            user-select: none;
+            /* background-color: red; */
+        }
+        .show-case{
+            background-color: black;
+            width:100px;
+            height: 100px;
+            border: 2px solid rebeccapurple;
+            border-radius: 0;
+            box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.459);
+        }
+        .container>div:last-child{
+            background-color: wheat;
+            width:50px;
+            height: 20px;
+            border-radius: 5px;
+            text-align: center;        }
+            .container>div:last-child:active{
+            background-color: rgba(0, 0, 0, 0.623);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="show-case">
+        </div>
+        <div class="input-color">
+            <input type="text" name = "color">
+            <label for="color">color</label>
+        </div>
+        <div class="input-shape">
+            <input type="radio" name = "shape" checked>
+            <label for="shape">square</label>
+            <input type="radio" name = "shape">
+            <label for="shape">circle</label>
+            <input type="radio" name = "shape">
+            <label for="shape">rectangle</label>
+            <input type="radio" name = "shape">
+            <label for="shape">oval</label>
+        </div>
+        <div onclick="set()" class="ram"> set </div>
+    </div>
+    <script>
+        var show = document.querySelector(".show-case");
+        var color = document.getElementsByName("color")[0];
+        var shape = document.getElementsByName("shape");
+        show.style.backgroundColor = "black";
+        show.style.width = "100px";
+        show.style.height = "100px";
+        show.style.borderRadius ="50%";
+        // for(var a in shape){ console.log(a)}
+        function set(){
+        if(shape[0].checked){
+            show.style.width = "100px";
+            show.style.height = "100px";
+            show.style.borderRadius ="0px";
+            show.style.backgroundColor = color.value;
+        }else if(shape[1].checked){
+            show.style.width = "100px";
+            show.style.height = "100px";
+            show.style.borderRadius ="50%";
+            show.style.backgroundColor = color.value;
+        }else if(shape[2].checked){
+            show.style.width = "200px";
+            show.style.height = "100px";
+            show.style.borderRadius ="0px";
+            show.style.backgroundColor = color.value;
+        }else if(shape[3].checked){
+            show.style.width = "200px";
+            show.style.height = "100px";
+            show.style.borderRadius ="50%";
+            show.style.backgroundColor = color.value;
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>put ball in basker</title>
+    <!-- <meta http-equiv="refresh" content = "5"> -->
+    <script src="../jquery-3.6.0.js"></script>
+   <style>
+       
+   </style>
+</head>
+<body>
+    <div id="button">Collect Balls</div>
+    <div id="basket">
+     
+    </div>
+    <script>
+        let colorMap = ['red', 'blue', 'yellow', 'lightgrey', 'darkorchid', 'black', 'orange', 'deeppink', 'green', 'purple', 'saddlebrown', 'lightseagreen', 'deepskyblue', 'firebrick', 'crimson']
+
+        let ballNumber = 1;
+        $('#button').click(function(){
+            $('#basket').append(`<div class="ball" id = "${ballNumber}" ></ball>`);
+                $('.ball').css({
+                    width:"50px",
+                    height: "50px",
+                    borderRadius:"50%"
+                });
+                let color  = colorMap[parseInt(Math.random()*15)];
+                $(`#${ballNumber}`).css('backgroundColor',color);
+                ballNumber++;
+            })
+
+        
+        $('body').css({
+            display:"grid",
+            gridTemplateColumn:"1fr",
+            placeItems:"center center",
+            gap:"50px",
+            userSelect:"none",
+            padding:"50px",
+            });
+        $('#button').css({
+            padding:"10px 20px",
+            backgroundColor:"#fff",
+            boxShadow:"0px 0px 10px #666 ",
+            width:"200px",
+            textAlign:"center",
+            magin:"50px 0px",
+        });
+        $('#basket').css({
+            display:"flex",
+            flexDirection:"row",
+            flexWrap:"wrap-reverse",
+            alignContent:"flex-start",
+            backgroundColor:"#fff",
+            boxShadow:"0px 0px 10px #666",
+            border:"5px solid black",
+            borderTopWidth:"0px",
+            width:"80vw",
+            height:"200px",
+            textAlign:"center",
+            magin:"50px 0px",
+        });
+        
+    </script>
+</body>
+</html>

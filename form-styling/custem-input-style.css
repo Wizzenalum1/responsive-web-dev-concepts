@@ -1,0 +1,154 @@
+:root{
+    --color:rebeccapurple;
+    --disabled: #959495;
+}
+
+html{
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.371);
+}
+body{
+    box-sizing: border-box;
+    width:calc(100vw - 100px);
+    margin:50px;
+}
+body *,body *:before,body *::after{
+    box-sizing: inherit;
+}
+.d-grid-col{
+    display: grid;
+    grid-auto-flow: column;
+}
+.d-grid-row{
+    display: grid;
+    grid-auto-flow: row;
+}
+.radio{
+    font-size: 2.5rem;
+    color:var(--color);
+}
+body{
+    gap:50px;
+}
+
+.radio-button-example{
+    gap:20px;
+}
+.radio {
+    /* // ...existing styles */
+  
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: 0.5em;
+  }
+.radio__input>input{
+    /* removed radio button by keeping its actual functionality; */
+    opacity: 0;
+    width:0;
+    height: 0;
+}
+.radio__control {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.1em solid currentColor;
+  }
+  /* fix for dis-alignment which apear due to calculation of the span dimentiaon even thought its content is 0,0 dimension */
+  .radio__input{
+    display: flex;
+}
+.radio__label{
+    line-height: 1;
+}
+.radio__control {
+    /* trying pricese alignment   */
+    transform: translateY(-0.05em);
+  }
+/* adding the click and control to the .radio__control */
+/* method 1 */
+/* .radio__input>input:checked + .radio__control {
+    background: radial-gradient(currentcolor 50%, rgba(255, 0, 0, 0) 51%);
+  } */
+
+
+/* method 2 */
+.radio__control {
+    display: grid;
+    place-items: center;
+  }
+.radio__input>input + .radio__control::before{
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    /*background-color: currentColor;/* this is not used because during print it wont apear*/
+    box-shadow: inset 0.5em 0.5em currentColor;
+    border-radius: 50%;
+    transition: 180ms transform ease-in-out;
+    transform: scale(0);
+  }
+  .radio__input>input:checked + .radio__control::before {
+    transform: scale(1);
+  }
+  .radio__input>input:focus + .radio__control {
+    box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+  }
+  .radio {
+    transition: 180ms all ease-in-out;
+    opacity: 0.8;
+  }
+.radio:focus-within {
+        transform: scale(1.05);
+        opacity: 1;
+  }
+
+  /* **********checkbox-editing*********** */
+  .checkbox{
+    display: grid;
+    grid-template-columns: min-content auto;
+    gap:.5em;
+    color:var(--color);
+    font-size: 2rem;
+  }
+
+  /* disapearing the default chebox and retain width and height to ensure discoverability*/
+  .checkbox_input>input{
+    width:1em;
+    height: 1em;
+    grid-area: "check box";
+
+    opacity: 0;
+  }
+  .checkbox_input{
+    display: grid;
+    grid-template-areas: "check box";
+  }
+  .checkbox__control{
+    width:1em;
+    height: 1em;
+    border:.1em solid currentColor;
+    border-radius: .25em;
+    display: grid;
+    grid-area: "check box";
+    transform: translateY(.1em);
+  }
+  .checkbox__control>svg{
+    transition: transform 0.1s ease-in 25ms;
+    transform: scale(0);
+    transform-origin: bottom left;
+  }
+  .checkbox_input>input:checked + .checkbox__control>svg{
+    transform:scale(1);
+  }
+  .checkbox_input>input:focus + .checkbox__control{
+    box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+  }
+  .checkbox__input input:disabled + .checkbox__control {
+    color: var(--disabled);
+  }
+  .checkbox--disabled {
+    color: var(--disabled);
+  }
+  .checkbox__label{
+    line-height: 1;
+  }

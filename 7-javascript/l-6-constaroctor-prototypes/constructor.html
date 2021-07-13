@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> we have createed a function that can create objects</h1>
+    <h1>constructors in java script.</h1>
+    <h1>js provide reusing functions that are created by the same constructor, so to create thsi functionallity we need prototypes.</h1>
+
+<script>
+    // try strict mod then check waht is the output
+    // creation of student object if we need few objects
+    var student1 = {
+        name:"abc",
+        rn:10,
+        marks:80,
+    }
+
+    // creation of student objects by function if they are verry high in numbers.
+    // var student = function(name,rn,marks){
+    //     return {name:name,rn:rn,marks:marks}
+    // }
+    // or other way of writting this is 
+    var student = function(name,rn,marks){
+        var student = {};
+        student.name = name;
+        student.rn = rn;
+        student.marks = marks;
+        return student;
+    }
+    var student1 = student("ghanshyam",40,50);
+    var student2 = student("hey",00,00);
+
+    // creating objects by default constructor defined in javascript.
+    function Student(name,rn,mark){
+        this.name = name;
+        this.rn = rn;
+        this.mark = mark;
+    }
+
+    var student4 = new Student("name",678,5);
+    var student5 = Student("consttruct", 100,100); // what should be result
+
+// add behabiors to the objects.
+    function Vehicle(numWheels,price){
+        this.wheels = numWheels;
+        this.price = price;
+        this.getPrice = function(){
+            return this.price;
+        }
+    }
+
+    var v1 = new Vehicle(1,50000);
+    var v2 = new Vehicle(22,534300);
+    // question is v1 and v2 has their own getprice function or they sharing the same function.
+
+
+
+</script>
+</body>
+</html>

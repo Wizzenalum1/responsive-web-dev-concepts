@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script start</title>
+</head>
+<body>
+    <h1>what is closure  </h1>
+    <p>function with bundeled lexical envioronment. when is returned it have elxical scope of parent function or global. and then give a exampel.</p>
+    <script>
+        // // question 1
+        // let a = function(){
+        //     let b = 5;
+        //     let c = function(){
+        //         console.log(b);
+        //     }
+        //     c();
+        // }
+        // a();
+        // // by returning the fucntion
+        // let a = function(){
+        //     let b = 5;
+        //     return function(){
+        //         console.log(b);
+        //     }
+        // }
+        // let c = a();
+        // c();
+    
+        // by returning the fucntion
+        function x(){
+            let a = 5;
+            function y(){
+                console.log(a);
+            }
+            y();
+            a = 200;
+            y();
+            // y();
+            return y;
+        }
+        // x();
+        var z = x();
+        z();
+    </script>
+</body>
+</html>

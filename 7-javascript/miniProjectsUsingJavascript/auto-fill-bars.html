@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="120" >
+    <style>
+        body{
+            box-sizing: border-box;
+            color:white;
+            margin: 0px;
+            padding:20px;
+            min-height: 100vh;
+            background:no-repeat linear-gradient(45deg,rgb(25, 2, 61),rgb(173, 6, 173));
+        }
+        body>* :after>*{
+            box-sizing: inherit;
+        }
+        #bar{
+            /* background-color: aliceblue; */
+            /* transform: rotateZ(-90deg); */
+
+        }
+        #scroll{
+            height: 150vh;
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            position: relative;
+            border: 2px solid black;
+            margin:50px 0px;
+        }
+        #scroll>p{
+            position:sticky;
+            top:20px;
+            border:5px solid red;
+            }
+        .cuboid{
+            position:relative;
+            width:500px;
+            height: 200px;
+            /* transform: rotateY(-10deg) rotateX(10deg); */
+            transform-style: preserve-3d;
+            perspective: 3000px;
+            
+        }
+
+        .cuboid-animation{
+            animation-name: cuboid-rotate;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        #bar .fill{
+            background-color: rgba(255, 255, 255, 0.761);
+            width:0%;
+            height: 100%;
+            transition: 1s;
+            width:80%;
+        }
+        .fill-animation{
+            animation:fill-color 20s alternate infinite;
+        }
+        .face{
+            left:50px;
+            top:75px;
+            position: absolute;
+            width:400px;
+            height: 50px;
+            border:5px solid rgb(0, 0, 0);
+        }
+        .face1{
+            /* background-color:rgb(16, 16, 145); */
+
+            transform: none;
+        }
+        .face2{
+            /* background-color: rgb(177, 6, 6); */
+            transform: rotateX(90deg) translateY(25px) translateZ(25px);
+        }
+        .face3{
+            /* background-color: rgb(165, 18, 165);  */
+             transform: rotateX(90deg) translateY(25px) translateZ(-25px);
+        }
+        .face4{
+            /* background-color: rgb(15, 172, 172); */
+            transform: translateZ(50px);
+        }
+        @keyframes cuboid-rotate {
+    from{
+        transform: rotateX(0deg) rotateY(5deg);
+    }
+    50%{transform: rotateX(180deg) rotateY(5deg); }
+    /* 75%{transform: rotateX(0deg) rotateY(0deg); } */
+
+    to{
+        transform: rotateX(360deg) rotateY(5deg);
+        /* transform: rotateY(330deg); */
+        /* transform: rotateZ(360deg); */
+
+    }
+}
+@keyframes fill-color {
+    from{width:0%;}
+    2.5%{width:20%;}
+    5%{ width:10%; }
+    7.5%{width:30%; }
+    10%{width:20%;}
+    12.5%{ width:25%; }
+    15%{width:50%; }
+    17.5%{width:90%;}
+    20%{ width:60%; }
+    22.5%{width:40%; }
+    25%{width: 80%;}
+    to{width: 80%;}   
+}
+    </style>
+    <title>bar will automatically filled as get visible</title>
+</head>
+<body>
+    <div id="scroll"><p>please scroll</p></div>
+    <div id  = "skills">
+        <div id="bar">
+            <div class="cuboid">
+                <div class="face face1 "><div class = "fill "> </div></div>
+                <div class="face face2"><div class = "fill "> </div></div>
+                <div class="face face3"><div class = "fill "> </div></div>
+                <div class="face face4"><div class = "fill "> </div></div>
+                <div class="side-face face5"> </div>
+                <div class="side-face face6"> </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="scroll"></div>
+    <div></div>
+    <script>
+        let bar = document.getElementById("skills");
+        let cuboid = document.querySelectorAll(".cuboid");
+        let face = document.querySelectorAll(".fill");
+        function startAnimation(){
+            if(document.scrollingElement.scrollTop-window.innerHeight>bar.offsetTop){
+                for(a of cuboid){
+                    a.classList.add("cuboid-animation");
+                }
+                for(a of face){
+                    a.classList.add("fill-animation");
+                }
+            }
+            
+        }
+        document.addEventListener('scroll',startAnimation);
+        
+
+    </script>
+    
+</body>
+</html>

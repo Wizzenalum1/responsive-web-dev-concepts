@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetching image</title>
+    <script src="../jquery-3.6.0.js"></script>
+    <style>
+        body{
+            background-color: burlywood;
+        }
+        div{
+            margin:50px auto;
+            width:70vw;
+            height:auto;
+        }
+        figure{
+            height:100%;
+            width:100%;
+        }
+        img{
+            width:100%;
+            height:auto;
+        }
+        nav{
+            margin:auto;
+            position: absolute;
+            left:50%;
+            padding:10px 20px;
+            font-size: 2em;
+            background-color: blueviolet;
+            user-select: none;
+        }
+        nav:hover{
+            box-shadow: 0 0 5px white;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>first time fetching the image by making ajax request to dog api.</h1>
+    <nav onclick="handleClick()">Fetch new image</nav>
+    <div class="image">
+        <figure >
+            <img alt="image not found">
+            <figcaption> image from the dogs api</figcaption>
+        </figure>
+    </div>
+    <script>
+        let img = document.querySelector("img");
+        let button = document.querySelector("nav");
+        var xhrRequst = new XMLHttpRequest(); // create reqeust object.
+        function handleClick(){
+            console.log("button clicked")
+            // open the requset or set teh content for requst obj.open(requestType, linkToServer,treuForAsynchronousRequst);
+            xhrRequst.open('get','https://dog.ceo/api/breeds/image/random',true); // opening the 
+            xhrRequst.send(); // send the request
+            xhrRequst.onload = function(){  // this define waht will we do as responce cam along.
+                console.log(xhrRequst.response);
+                var resj = JSON.parse(xhrRequst.response);
+                if(resj.status=="success"){
+                    console.log("success")
+                    img.setAttribute('src',resj.message);
+                }
+            }
+            xhrRequst.onerror = function(){
+                console.log("request failed")
+            }
+        }
+    </script>   
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clall</title>
+</head>
+<body>
+    <h1>class introduced in es6 and it is just syntactically sugar over the peototype classes</h1>
+    <h1>won't work without new key word, classes will not hoisted, can be written in class expression with named or unnamed similar to normal functions.</h1>
+    
+    <script>
+        class Vehicle{
+            constructor(wheels,price){
+                this.wheels = wheels;
+                this.price = price;
+            }
+            getPrice(){
+                return this.price;
+            }
+        }
+        var v1 = new Vehicle(2,2343);
+        var v2 = new Vehicle(4,1043);
+        
+    </script>
+</body>
+</html>

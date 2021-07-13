@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Mode</title>
+    <style>
+        body{
+            border:2px solid black;
+            width:80vw;
+            height:80vh;
+            margin:10vh 10vw;
+            padding:0px;
+            box-shadow:0px 5px 15px gray inset;
+        }
+        #togle-box{
+            margin:30px auto;
+            border:2px solid gray;
+            width:40px;
+            height:10px;
+            border-radius:5px    
+        }
+        #togle-button{
+            width:10px;
+            height:10px;
+            background-color:black;
+            border-radius:50%;
+            position:relative;
+            left:-1px;  
+        }
+        p{text-align: center;font-size:2rem;}
+    </style>
+</head>
+<body>
+    <div id = "togle-box" onclick="handleTogle()">
+        <div id = "togle-button"> </div>
+    </div>
+    <p>
+        Click on the Toggle Button
+    </p>
+    <script>
+        var button = document.getElementById("togle-button");
+        // button.style.left="31px"
+        // document.body.style.backgroundColor = "black";
+        // button.style.backgroundColor = "white";
+        var buttonBox = document.getElementById("togle-box");
+        var togle = true;
+        function handleTogle(){
+            if(togle){
+            button.style.left="31px"
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white"
+            button.style.backgroundColor = "white";
+            togle = false
+        }
+        else{
+            button.style.left="-1px"
+            document.body.style.backgroundColor = "white";
+            button.style.backgroundColor = "black";
+            document.body.style.color = "black"
+            togle = true;
+        }
+        }
+
+    </script>
+</body>
+</html>
